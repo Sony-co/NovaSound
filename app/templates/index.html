@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>NovaSound</title>
+    <style type="text/css">
+        {% load static %}
+
+        body {
+            font-family : Arial , serif ;
+            background-color: rgb(30,31,35);
+        }
+
+        #logo {
+            width :50px;
+            height : 50px;
+        }
+
+        .heading {
+            display:flex;
+            align-items : center;
+            color : white;
+
+        }
+
+        .header {
+            display : flex;
+            justify-content : space-between;
+            align-items : center;
+            background-color : rgb(30,31,35);
+        }
+
+        .row a {
+            text-decoration : none;
+            color : lightgray;
+            padding : 15px;
+            transition: border-bottom 0.5s ease;
+        }
+
+        .row a:hover  {
+            color : cornflowerblue;
+            border-bottom: 2px solid cornflowerblue;
+        }
+
+        .btn {
+            border:None;
+            background-color : rgb(30,31,35);
+            transition: transform 0.25s ease;
+        }
+
+        .btn:hover {
+            transform : scale(1.2)
+        }
+
+        .upper-body {
+            background-color : black;
+            background-image : url("{% static 'images/bg.png' %}");
+            background-repeat:no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .upper-body p,h1{
+            margin-left:80px;
+        }
+
+        .hite {
+            color:white;
+            font-size : 300%;
+        }
+
+        .ble {
+            color:dodgerblue;
+            font-size:250%;
+        }
+
+        #text {
+            line-height :25px;
+        }
+
+        .upper-body p{
+         color : White;
+        }
+
+        .grey {
+            color:rgb(50,51,55) !important;
+        }
+
+        .blat button{
+            margin-left : 80px;
+            background-color: dodgerblue;
+            border : none;
+            border-radius : 5px;
+            color :White;
+            display:flex;
+            align-items : center;
+            transition: transform 0.30s ease;
+            padding : 10px;
+            font-size: 16px;
+            transform-origin: center;
+        }
+
+        .blat {
+            display : flex;
+            flex-direction : row;
+        }
+
+        #bit {
+            background-color: grey;
+        }
+
+        .blat button:hover {
+            transform : scale(1.03);
+            font-size : 16px;
+        }
+
+        .plate h3 {
+            color : White;
+        }
+
+        .plate p {
+            color : grey;
+            line-height : 1px;
+        }
+
+        .plate img{
+            height : 40px;
+            width:40px;
+        }
+
+        .plate {
+            display:flex;
+            align-items:center;
+            flex-direction: column;
+            line-height : 1px;
+            padding:5px;
+            gap : 0px;
+            transition: transform 0.3s ease;
+        }
+
+        .gay {
+            line-height : 1px;
+            display :flex;
+            align-items:center;
+            flex-direction: column;
+            gap : 0;
+        }
+
+        .gay p {
+            margin:0;
+            line-height : 1.3;
+        }
+
+        #upper-middle-body {
+            display:flex;
+            align-items : center;
+            justify-content: space-between;
+        }
+        .plate:hover {
+            transform : scale(1.03);
+        }
+
+        .cut {
+            text-decoration: line-through;
+        }
+
+        .wite {
+            background-color : white;
+            line-height : 15px;
+            padding: 10px;
+
+            border-radius :5px;
+        }
+
+        .wite h2 {
+            font-style:  normal;
+            font-weight: bolder;
+            font-size:200%;
+            font-family: "Agency FB",serif;
+            line-height:3px;
+        }
+
+        .wite h3,p {
+            color: Grey;
+        }
+
+        .blu {
+            color : dodgerblue;
+        }
+
+        #box h4 {
+            background-color:mediumspringgreen;
+            border-radius:5px;
+            color:green;
+            padding:2px;
+        }
+
+        #box {
+            display:flex;
+            align-items:center;
+            flex-direction: row;
+            gap:3px;
+        }
+
+        #box h4,h3,h2 {
+            margin:15px;
+        }
+
+        #ft {
+            float:right;
+    width: clamp(250px, 35vw, 450px);
+    height: auto;
+    left: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+        #ft:hover {
+            transform: scale(1.03);
+        }
+
+        .colors {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        }
+
+        .colors input {
+        display: none;
+        }
+
+        .color {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        border: 2px solid white;
+        outline: 1px solid transparent;
+        transition: transform 0.2s ease;
+        }
+        .black {
+        background-color: #080808;
+        }
+
+        .white {
+        background-color: #ffffff;
+        outline: 1px solid #d5d5d5;
+        }
+
+        .blue {
+        background-color: #4078e8;
+        }
+
+        .brown {
+        background-color: #d6ad9b;
+        }
+
+        .colors input:checked + .color {
+        outline: 2px solid #536dfe;
+        outline-offset: 3px;
+        }
+
+        .color:hover {
+        transform: scale(1.12);
+        }
+
+        .lower-body {
+            margin-left: 100px;
+            color:white;
+        }
+
+        .lower-body h1 {
+            margin-left:0;
+        }
+
+        #bg {
+            background-image : url("{% static 'images/mountain.png' %}");
+            background-repeat:no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .reviews  {
+            background-image : url("{% static 'images/reviews.png' %}");
+            background-repeat:no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .reviews p{
+            visibility: hidden;
+        }
+
+        .rowe a {
+            text-decoration : none;
+            color : lightgray;
+            padding : 15px;
+            transition: transform 0.5s ease;
+            display:inline-block;
+        }
+        .rowe a:hover{
+            transform : scale(1.2)
+        }
+
+        .wht {
+            background-color: transparent;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .wht img {
+            width: 22px;
+            height: 22px;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1 class="heading"><img src="{% static 'images/logo.png' %}" alt="logo" id="logo">NovaSound</h1>
+
+    <div class="row">
+    <a href="">Home</a>
+    <a href="">Shop</a>
+    <a href="">About</a>
+    <a href="">Contact</a>
+    </div>
+
+    <div class="logo">
+    <button class="btn"> <img src="{% static 'images/shopping-cart.svg' %}" alt="cart" ></button>
+    <button class="btn"> <img src="{% static 'images/search.svg' %}" alt="search" ></button>
+
+</div>
+</div>
+<div class="upper-body">
+    <br>
+    <p class="grey">PREMIUM WIRELESS HEADPHONES</p>
+    <div id="text">
+    <h1 class="hite">Sound That</h1>
+    <h1 class="ble">Moves You</h1>
+    </div>
+    <p>Experience crystal clear audio , deep bass and all-day <br>
+    comfort with NovaSound pro designed for music lovers,<br>
+    content creators and more</p>
+    <div class="blat">
+    <button><img src="{% static 'images/move-right.svg' %}" alt="arrow" >   Buy Now</button>
+    <button id="bit"><img src="{% static 'images/play.svg' %}" alt="play" >   Watch Video</button></div>
+<br>
+</div>
+<div id="upper-middle-body">
+    <div class="plate">
+        <img src="{% static 'images/audio-lines.svg' %}" alt="sound" >
+        <h3>Hi-Fi Sound</h3>
+        <div class="gay">
+        <p>Crystal clear audio with </p>
+        <p>powerful bass</p></div>
+    </div>
+    <div class="plate">
+        <img src="{% static 'images/battery-medium.svg' %}" alt="battery" >
+        <h3>Long Battery Life</h3>
+        <div class="gay">
+        <p>Up to 60 hours of playtime </p>
+        <p>on a single charge</p></div>
+    </div>
+    <div class="plate">
+        <img src="{% static 'images/leaf.svg' %}" alt="leaf" >
+        <h3>Ultra Comfortable</h3>
+        <div class="gay">
+        <p>Soft ear cushions for </p>
+        <p>all day wear</p></div>
+    </div>
+    <div class="plate">
+        <img src="{% static 'images/bluetooth.svg' %}" alt="bluetooth" >
+        <h3>Bluetooth 5.3</h3>
+        <div class="gay">
+        <p>Faster , stronger and more  </p>
+        <p>capable connection</p></div>
+    </div>
+</div>
+<div class="wite">
+    <br><img id="ft" src="{% static 'images/headphone.jpg' %}" alt="headphone">
+    <p class="grey">NOVASOUND PRO</p>
+    <br>
+    <h2>Wireless Headphones</h2>
+    <div id="box"><h2 class="blu">₹4999</h2>
+        <h3 class="cut">₹7999</h3>
+        <h4>38% off</h4>
+    </div>
+        <h3>★★★★★ 4.8 (1234 reviews)</h3>
+    <p>The NovaSound Pro delivers an immersive audion experience with <br> studio quality audio sound,premium build and advanced noise cancellation.<br>Perfect for everyday use, work, travel and gaming</p>
+    <form>
+        <div class="colors">
+    <input type="radio" name="color" id="black" checked>
+    <label for="black" class="color black"></label>
+
+    <input type="radio" name="color" id="white">
+    <label for="white" class="color white"></label>
+
+    <input type="radio" name="color" id="blue">
+    <label for="blue" class="color blue"></label>
+
+    <input type="radio" name="color" id="brown">
+    <label for="brown" class="color brown"></label>
+</div>
+    </form>
+    <br>
+    <div class="blat" >
+    <button style="margin-left: 0"><img src="{% static 'images/shopping-cart.svg' %}" alt="cart" >Add to Cart</button>
+    <button style="background-color : whitesmoke; color:black;"><img src="{% static 'images/heart.svg' %}" alt="cart" >Wishlist</button>
+    </div>
+</div>
+<br>
+<div id="bg">
+<div class="lower-body">
+    <br>
+    <p style="font-family:'Agency FB',serif">BUILT FOR EVERY MOMENT</p>
+    <h1>More Than Just <br>Headphones</h1>
+    <p>Whether you are working,traveling or just relaxing,<br>NovaSound Pro is your perfect companion. </p>
+    <br>
+</div></div>
+
+<div class="reviews">
+    <br>
+    <p>Reality is the sum total of everything that actually exists, independent of our thoughts,<br>
+        beliefs, or perceptions. While the universe operates on objective physical laws—like gravity<br>
+        pulling an apple to the ground—our human experience of reality is highly subjective. We filter<br>
+        the world through our senses, culture, and personal memories, meaning that two people can<br>
+        experience the exact same event but perceive two entirely different realities. In the modern<br>
+        era, this boundary is blurred even further by digital<br>
+        technology, media echoes, and virtual environments, forcing us to constantly question</p>
+    <br>
+</div>
+<div class="header">
+    <h1 class="heading"><img src="{% static 'images/logo.png' %}" alt="logo" id="logo">NovaSound</h1>
+
+    <div class="rowe">
+    <a href="">Home</a>
+    <a href="">Shop</a>
+    <a href="">About</a>
+    <a href="">Contact</a>
+    </div>
+
+    <div class="logo">
+    <button class="btn wht"> <img src="{% static 'images/instagram.svg' %}" alt="instagram" ></button>
+    <button class="btn wht"> <img src="{% static 'images/github.svg' %}" alt="github" ></button>
+        <button class="btn wht"> <img src="{% static 'images/discord.svg' %}" alt="discord" ></button>
+
+    </div></div>
+
+</body>
+</html>
