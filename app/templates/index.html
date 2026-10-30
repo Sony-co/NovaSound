@@ -2,6 +2,7 @@
 <html lang="en">
 {% load static %}
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>NovaSound</title>
     <style type="text/css">
@@ -21,6 +22,7 @@
             display:flex;
             align-items : center;
             color : white;
+
 
         }
 
@@ -316,6 +318,71 @@
             height: 22px;
             display: block;
         }
+        @media screen and (max-width: 768px) {
+
+    /* Product image */
+    #ft {
+        float: none;
+        display: block;
+        width: 85%;
+        max-width: 340px;
+        height: auto;
+        margin: 0 auto;
+        object-fit: contain;
+    }
+
+    /* Product section */
+    #upper-middle-body {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    /* Hero background */
+    .upper-body {
+        background-size: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .reviews {
+        background-size: contain;
+        background-position: left;
+    }
+    .header {
+        padding: 10px 15px;
+        gap: 10px;
+
+    }
+
+    #logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .heading {
+        gap: 8px;
+        font-size: 14px;
+    }
+
+    .row a {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .rowe a {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .rowe {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        gap: 5px;
+    }
+}
 
     </style>
 </head>
